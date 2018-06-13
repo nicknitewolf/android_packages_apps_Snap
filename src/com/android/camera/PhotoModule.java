@@ -1920,7 +1920,7 @@ public class PhotoModule
 
         // Set rotation and gps data.
         int orientation = (mOrientation + mOrientationOffset) % 360;
-        mJpegRotation = CameraUtil.getJpegRotation(mCameraId, orientation);
+        mJpegRotation = CameraUtil.getJpegRotationForCamera1(mCameraId, orientation);
         String pictureFormat = mParameters.get(KEY_PICTURE_FORMAT);
         Location loc = getLocationAccordPictureFormat(pictureFormat);
 
@@ -4062,7 +4062,7 @@ public class PhotoModule
         int video_flip_value   = myUtil.getVideoFlip();
         int picture_flip_value = myUtil.getPictureFlip();
 
-        int rotation = CameraUtil.getJpegRotation(mCameraId, mOrientation);
+        int rotation = CameraUtil.getJpegRotationForCamera1(mCameraId, mOrientation);
         mParameters.setRotation(rotation);
         if (rotation == 90 || rotation == 270) {
             // in case of 90 or 270 degree, V/H flip should reverse
