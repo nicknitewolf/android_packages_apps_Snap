@@ -68,7 +68,6 @@ public class CameraHolder {
     private static CameraProxy mMockCamera[];
     private static CameraInfo mMockCameraInfo[];
     private static Context mContext;
-    private static boolean mCam2On = true;
     private ArrayList<CameraCharacteristics> mCharacteristics = new ArrayList<>();
 
     /* Debug double-open issue */
@@ -133,11 +132,6 @@ public class CameraHolder {
             sHolder = new CameraHolder();
         }
         return sHolder;
-    }
-    // need init first of all
-    public static void setCamera2Mode(Context context, boolean cam2On) {
-        mContext = context;
-        mCam2On = cam2On;
     }
 
     private static final int RELEASE_CAMERA = 1;
